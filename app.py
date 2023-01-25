@@ -83,7 +83,7 @@ def test():
     
 @app.route("/",methods=["GET"])
 def redirect():
-    return render_template("test.html")    
+    return render_template("login.html")    
 
 @app.route("/index",methods=["GET"])
 def index():
