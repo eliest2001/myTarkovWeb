@@ -1,5 +1,5 @@
 
-fetch("http://tarkov-fir.herokuapp.com/useritems", {
+fetch("https://tarkov-fir.herokuapp.com/useritems", {
     method: "GET",
     headers : {"Authorization" : `Bearer ${window.localStorage.token}`}
 })
@@ -70,7 +70,7 @@ fetch("http://tarkov-fir.herokuapp.com/useritems", {
             useritems[itemName] = updatedValue
 
             let jsonData = JSON.stringify(useritems);
-            fetch('http://tarkov-fir.herokuapp.com/updateitems', {
+            fetch('https://tarkov-fir.herokuapp.com/updateitems', {
                 method: 'POST',
                 headers : { 
                     'Content-Type': 'application/json', 
