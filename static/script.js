@@ -1,5 +1,5 @@
 
-fetch("http://127.0.0.1:5000/useritems", {
+fetch("http://tarkov-fir.herokuapp.com/useritems", {
     method: "GET",
     headers : {"Authorization" : `Bearer ${window.localStorage.token}`}
 })
@@ -70,7 +70,7 @@ fetch("http://127.0.0.1:5000/useritems", {
             useritems[itemName] = updatedValue
 
             let jsonData = JSON.stringify(useritems);
-            fetch('http://127.0.0.1:5000/updateitems', {
+            fetch('http://tarkov-fir.herokuapp.com/updateitems', {
                 method: 'POST',
                 headers : { 
                     'Content-Type': 'application/json', 
