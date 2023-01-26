@@ -18,7 +18,7 @@ function submitform() {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        alert("signed up successfully").t;
+        alert("signed up successfully");
         window.location.href = '/index';
     })
     return false;
