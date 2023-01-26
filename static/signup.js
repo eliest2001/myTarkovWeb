@@ -19,7 +19,7 @@ function submitform() {
     .then(data => {
         console.log(data)
         alert("signed up successfully");
-        window.location.href = '/index';
+        window.location.href = '/login';
     })
     return false;
 }
