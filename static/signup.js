@@ -10,7 +10,7 @@ function submitform() {
         return false;
     }
     let jsonData = JSON.stringify(Object.fromEntries(formData));
-    fetch('https://tarkov-fir.herokuapp.com/signup', {
+    fetch('https://takovfir.onrender.com/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: jsonData
@@ -18,7 +18,8 @@ function submitform() {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        alert("signed up successfully");
+        alert("signed up successfully").t;
+        window.location.href = '/index';
     })
     return false;
 }
