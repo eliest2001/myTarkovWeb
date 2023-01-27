@@ -8,7 +8,7 @@ function submitform() {
         return false;
     }
     let jsonData = JSON.stringify(Object.fromEntries(formData));
-    fetch('https://takovfir.onrender.com/signup', {
+    fetch('https://tarkovfir.onrender.com/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: jsonData
