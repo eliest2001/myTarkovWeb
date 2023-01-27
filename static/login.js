@@ -3,7 +3,7 @@
 function login(){
     var formData = new FormData(document.querySelector("form"));
     let jsonData = JSON.stringify(Object.fromEntries(formData));
-    fetch('https://takovfir.onrender.com/login', {
+    fetch('https://tarkovfir.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: jsonData
