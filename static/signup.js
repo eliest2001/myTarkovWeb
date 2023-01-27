@@ -18,8 +18,10 @@ function submitform() {
             switch(response.status){
                 case 409:
                     alert("Username alredy exists")
+                    break
                 default:
                     alert("Error singing up")
+                    break
             }
         }else{
             response.json().then(data => {

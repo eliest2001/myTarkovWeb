@@ -13,8 +13,10 @@ function login(){
             switch(response.status){
                 case 401:
                     alert("Invalid credentials")
+                    break
                 default:
                     alert("Error logging in")
+                    break
             }
             
         }else{
