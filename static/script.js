@@ -1,5 +1,5 @@
 
-fetch("https://takovfir.onrender.com/useritems", {
+fetch("https://tarkovfir.onrender.com/useritems", {
     method: "GET",
     headers : {"Authorization" : `Bearer ${window.localStorage.token}`}
 })
@@ -70,7 +70,7 @@ fetch("https://takovfir.onrender.com/useritems", {
             useritems[itemName] = updatedValue
 
             let jsonData = JSON.stringify(useritems);
-            fetch('https://takovfir.onrender.com/updateitems', {
+            fetch('https://tarkovfir.onrender.com/updateitems', {
                 method: 'POST',
                 headers : { 
                     'Content-Type': 'application/json', 
