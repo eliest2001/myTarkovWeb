@@ -1,10 +1,8 @@
 function submitform() {
     var formData = new FormData(document.querySelector("form"));
-    // check if passwords match
-    console.log(formData)
     var password = document.getElementById("psw").value;
-    
     var confirmPassword = document.getElementById("confirmpsw").value;
+
     if (password != confirmPassword) {
         alert("Passwords do not match");
         return false;
@@ -15,11 +13,23 @@ function submitform() {
         headers: { 'Content-Type': 'application/json' },
         body: jsonData
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        alert("signed up successfully");
-        window.location.href = '/login';
+    .then(response => {
+        if(!response.ok){
+            switch(response.status){
+                case 409:
+                    alert("Username alredy exists")
+                default:
+                    alert("Error singing up")
+            }
+        }else{
+            response.json().then(data => {
+                alert("Signed up successfully");
+                window.location.href = '/login';
+            })
+        }
+
+
     })
+
     return false;
 }

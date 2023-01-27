@@ -131,6 +131,17 @@ def signUp(user, pwd):
     c.execute("INSERT INTO credentials VALUES (?,?,?)", (user,hash,token))
     conn.commit() 
     initializeUser(user)
+    
+def checkUserName(user):
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+    c.execute(f"SELECT nickname FROM credentials WHERE nickname='{user}'")
+    names = c.fetchone()
+    if names != None:
+        return False
+    else:
+        return True
+    
 
 
     
@@ -207,20 +218,16 @@ def initializeUser(user):
     conn.commit()
     
 if __name__ == "__main__":
-    # dataSetup()
-    # printData()
-    # namesList = getItemNames()
-    # print(namesList)
-    # for item in namesList:
+    #printCredentials()
     #        name, =item
     #        print(name)
     #        setImage(name)
-    # setupCredentials()
+    #setupCredentials()
     #signUp("pacorro","12343")
     # print(login("pacorro","12333"))
     # print(login("pacorro","12343"))
     # printCredentials()
-    # setItemsTable()
+    #setItemsTable()
     #initializeUser("manu")
     # setItemsTable()
     #initializeUser("manu")

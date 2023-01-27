@@ -1,4 +1,4 @@
-var data;
+
 
 function login(){
     var formData = new FormData(document.querySelector("form"));
@@ -9,23 +9,24 @@ function login(){
         body: jsonData
     })
     .then(response => {
-        if (response.status === 200) {
+        if (!response.ok){
+            switch(response.status){
+                case 401:
+                    alert("Invalid credentials")
+                default:
+                    alert("Error logging in")
+            }
             
-            data = response.json()
-            data.then(content => {
+        }else{
+            response.json().then(content => {
                 localStorage.setItem("token",content.token)
                 window.location.href = '/index';
             })
 
-        
-        } else {
-        // Display an error message
-            alert('Invalid credentials');
         }
     })
   
 .catch(error => {
-    // Handle errors
     console.log(error);
     })
     return false;
